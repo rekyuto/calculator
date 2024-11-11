@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+#inputResult {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#c {
+    width: 193px;
+    color: #ff5257;
+}
+
+#equals {
+    background-color: #72e6bf;
+    color: white;
+}
+
+#equals:hover {
+    opacity: 70%;
+}
+
+.ui {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.button-row:last-child {
+    margin-bottom: 0;
+}
+
+.output {
+    background-color: #242838;
+    color: white;
+    width: 400px;
+    padding: 20px;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    text-align: right;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #383e57;
+    width: 400px;
+    padding: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.symbol {
+    color: aquamarine;
+}
+
+button {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    border-radius: 25px;
+    background-color: #4c5168;
+    color: white;
+    transition: 0.1s;
+}
+
+button:hover {
+    background-color: #32384e;
+}
+
+* {
+    font-family: "Outfit", sans-serif;
+}
