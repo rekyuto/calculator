@@ -57,10 +57,6 @@ numberButtons.forEach((number) => {
     });
 });
 
-resetButton.addEventListener("click", () => {
-    clear();
-});
-
 operatorButtons.forEach((symbol) => {
     symbol.addEventListener("click", () => {
         if (a == null) {
@@ -79,6 +75,15 @@ operatorButtons.forEach((symbol) => {
     });
 });
 
+backspace.addEventListener("click", () =>{
+    currentNumber = currentNumber.substring(0, currentNumber.length - 1);
+    display.textContent = currentNumber;
+});
+
 equalButton.addEventListener("click", () => {
     display.textContent = operate(+a, operator, +currentNumber);
+});
+
+resetButton.addEventListener("click", () => {
+    clear();
 });
