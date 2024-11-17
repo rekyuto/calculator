@@ -1,3 +1,5 @@
+// Declare button variables
+
 const display = document.querySelector("#display");
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -6,10 +8,14 @@ const equalButton = document.querySelector("#equals");
 const backspace = document.querySelector("#backspace");
 const resetButton = document.querySelector("#c");
 
+// Declare variables for calculating
+
 let a = null;
 let b = null;
 let operator = null;
 let currentNumber = "";
+
+// Created functions for each operator
 
 function add(a, b){
     return a + b;
@@ -27,6 +33,8 @@ function divide(a, b){
     return a / b;
 };
 
+// Created a function that does the actual calculation
+
 function operate(a, operator, b){
     if (operator === "+"){
         return add(a, b);
@@ -43,6 +51,8 @@ function operate(a, operator, b){
     }
 };
 
+// Resets every value
+
 function clear() {
     a = null;
     b = null;
@@ -50,6 +60,8 @@ function clear() {
     currentNumber = "";
     display.textContent = "0";
 };
+
+// Adds the relevant values for each number and operator to the display
 
 numberButtons.forEach((number) => {
     number.addEventListener("click", () => {
@@ -76,12 +88,16 @@ operatorButtons.forEach((symbol) => {
     });
 });
 
+// Adds one decimal to a number
+
 decimalButton.addEventListener("click", () => {
     if (!currentNumber.includes(".")) {
         currentNumber += ".";
         display.textContent = currentNumber;
     }
 });
+
+// Deletes the last number inputted before reaching 0
 
 backspace.addEventListener("click", () =>{
     if (currentNumber.length > 1) {
@@ -93,9 +109,13 @@ backspace.addEventListener("click", () =>{
     }
 });
 
+// Finalizes the calculation
+
 equalButton.addEventListener("click", () => {
     display.textContent = operate(+a, operator, +currentNumber);
 });
+
+// Clears the display
 
 resetButton.addEventListener("click", () => {
     clear();
