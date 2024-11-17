@@ -1,6 +1,7 @@
 const display = document.querySelector("#display");
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
+const decimalButton = document.querySelector("#decimal");
 const equalButton = document.querySelector("#equals");
 const backspace = document.querySelector("#backspace");
 const resetButton = document.querySelector("#c");
@@ -75,9 +76,21 @@ operatorButtons.forEach((symbol) => {
     });
 });
 
+decimalButton.addEventListener("click", () => {
+    if (!currentNumber.includes(".")) {
+        currentNumber += ".";
+        display.textContent = currentNumber;
+    }
+});
+
 backspace.addEventListener("click", () =>{
-    currentNumber = currentNumber.substring(0, currentNumber.length - 1);
-    display.textContent = currentNumber;
+    if (currentNumber.length > 1) {
+        currentNumber = currentNumber.substring(0, currentNumber.length - 1);
+        display.textContent = currentNumber;
+    } else {
+        currentNumber = 0;
+        display.textContent = currentNumber;
+    }
 });
 
 equalButton.addEventListener("click", () => {
